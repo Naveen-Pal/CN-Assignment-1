@@ -1,4 +1,4 @@
-# Assignment 1: Custom DNS Resolution System Documentation
+# Assignment 1
 
 ## Overview
 

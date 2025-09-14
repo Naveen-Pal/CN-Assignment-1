@@ -62,12 +62,12 @@ pip install -r requirements.txt
 
 To run the complete system:
 
-1. First filter the DNS queries:
+1. First filter the DNS queries (optional, need to add `3.pcap` file first):
    ```bash
    python src/filterdns.py
    ```
 
-2. Add custom headers to the filtered queries:
+2. Add custom headers to the filtered queries (optional):
    ```bash
    python src/modify_query.py
    ```

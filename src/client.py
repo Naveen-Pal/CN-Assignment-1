@@ -6,7 +6,7 @@ from scapy.all import rdpcap, UDP, DNS
 packets = rdpcap("dns_custom_header.pcap")
 
 # UDP socket (client)
-server_addr = ("127.0.0.1", 5359)   # change if server is remote
+server_addr = ("127.0.0.1", 5359)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 print("Custom Header", "Domain Name", "Resolved Ip")
 
@@ -21,7 +21,6 @@ for i, pkt in enumerate(packets):
 
         # Send packet
         sock.sendto(payload, server_addr)
-        # print(f"[{i}] Sent {len(payload)} bytes to {server_addr}")
 
         # Receive response
         try:
@@ -43,8 +42,6 @@ for i, pkt in enumerate(packets):
             
             # Add to CSV data
             csv_data.append([custom_header, domain_name, resolved_ip])
-            
-            # print(f"    ↳ Received reply for packet {i}")
 
         except socket.timeout:
             print(f"    ✗ No response received for packet {i} (timeout)")

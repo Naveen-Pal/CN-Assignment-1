@@ -31,8 +31,6 @@ for pkt in packets:
     # Recalculate lengths & checksums
     del pkt[UDP].len
     del pkt[UDP].chksum
-    # del pkt[IP].len
-    # del pkt[IP].chksum
 
     dns_queries.append(pkt)
     query_count = (query_count+1)%6

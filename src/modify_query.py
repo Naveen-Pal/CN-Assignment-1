@@ -33,7 +33,7 @@ for pkt in packets:
     del pkt[UDP].chksum
 
     dns_queries.append(pkt)
-    query_count = (query_count+1)%6
+    query_count = (query_count+1)
 
 # Save modified DNS queries into a new file
 wrpcap("dns_custom_header.pcap", dns_queries)
